@@ -1,4 +1,4 @@
 package domain.payment;
 
-public class CreditCardPayment {
+public class CreditCardPayment extends Payment{
 }

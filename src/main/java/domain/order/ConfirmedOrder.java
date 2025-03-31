@@ -1,4 +1,4 @@
 package domain.order;
 
-public class ConfirmedOrder {
+public class ConfirmedOrder extends Order{
 }

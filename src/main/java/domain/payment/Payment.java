@@ -1,4 +1,6 @@
 package domain.payment;
 
-public abstract class Payment {
+import domain.order.ConfirmedOrder;
+
+public abstract class Payment extends ConfirmedOrder {
 }

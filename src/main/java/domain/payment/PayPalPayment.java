@@ -1,4 +1,4 @@
 package domain.payment;
 
-public class PayPalPayment {
+public class PayPalPayment extends Payment{
 }

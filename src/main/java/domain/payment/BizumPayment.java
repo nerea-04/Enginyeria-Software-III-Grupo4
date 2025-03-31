@@ -1,4 +1,4 @@
 package domain.payment;
 
-public class BizumPayment {
+public class BizumPayment extends Payment{
 }

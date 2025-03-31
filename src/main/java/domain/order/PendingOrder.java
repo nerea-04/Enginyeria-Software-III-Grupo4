@@ -1,4 +1,4 @@
 package domain.order;
 
-public class PendingOrder {
+public class PendingOrder extends Order{
 }

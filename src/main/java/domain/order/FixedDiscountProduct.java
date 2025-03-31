@@ -1,4 +1,4 @@
 package domain.order;
 
-public class FixedDiscountProduct {
+public class FixedDiscountProduct extends Product{
 }
