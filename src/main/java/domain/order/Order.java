@@ -21,6 +21,25 @@ public abstract class Order {
     public String getStateName() {
         return state.getStateName();
     }
-    public void con
-
+    public void confirmOrder(){
+        state.confirmOrder(this);
+    }
+    public void setState(OrderState state) {
+        this.state = state;
+    }
+    public void addProduct(Product product){
+        products.add(product);
+    }
+    public void deleteProduct(Product product){
+        products.remove(product);
+    }
+    public List<String> getProductName() {
+        return products.stream().map(Product::getName).toList();
+    }
+    public double calculateTolalProducts(){
+        return products.stream().mapToDouble(Product::getStandardPrice).sum();
+    }
+    public List<Product> getProducts() {
+        return products;
+    }
 }
