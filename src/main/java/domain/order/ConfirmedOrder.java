@@ -10,6 +10,6 @@ public class ConfirmedOrder extends Order{
     private Date confirmationDate;
 
     public ConfirmedOrder(Payment payment){
-        
+
     }
 }
