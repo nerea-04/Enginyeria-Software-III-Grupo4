@@ -40,9 +40,4 @@ public class Product {
         setDiscountStrategy(discountProduct);
     }
 
-    public long getDiscountedPrice(){
-        return -1;
-    }
-
-
 }

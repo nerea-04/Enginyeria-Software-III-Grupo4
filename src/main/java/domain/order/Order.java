@@ -6,7 +6,7 @@ import domain.store.Store;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class Order {
+public class Order {
     private long orderId;
     private OrderState state;
     private List<Product> products;
@@ -47,7 +47,7 @@ public abstract class Order {
     }
 
     public double calculateTotalProducts() {
-        return products.stream().mapToDouble(Product::getDiscountedPrice).sum();
+        return products.stream().mapToDouble(Product::getFinalPrice).sum();
     }
 
     public double getTotal() {

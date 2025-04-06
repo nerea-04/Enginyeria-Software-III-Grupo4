@@ -8,13 +8,12 @@ public class ConfirmedOrder implements OrderState{
 
     private double totalOrder;
     private LocalDate confirmationDate;
-    //
     private Payment payment;
 
     public ConfirmedOrder(Payment payment, Order order){
         this.totalOrder = order.calculateTotalProducts();
         this.confirmationDate = LocalDate.now();
-        //this.payment = payment;
+        this.payment = payment;
 
     }
     public void pay() {
@@ -49,4 +48,5 @@ public class ConfirmedOrder implements OrderState{
     public LocalDate getConfirmationDate() {
         return confirmationDate;
     }
+    // quizá deberíamos renombrarlo a getDate()
 }

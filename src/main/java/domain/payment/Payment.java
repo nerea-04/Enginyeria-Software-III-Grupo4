@@ -11,7 +11,7 @@ public abstract class Payment  { //extends ConfirmedOrder {
     public Payment(){
         this.start = LocalDate.now();
     }
-    public void processPayment() {
+    public final void processPayment() {
         obtainPaymentData();
         validateData();
         executePayment();
@@ -24,11 +24,12 @@ public abstract class Payment  { //extends ConfirmedOrder {
     public LocalDate getEnd() {
         return end;
     }
+
     protected void setEndDate() {
         this.end = LocalDate.now();
     }
     protected abstract void obtainPaymentData();
     protected abstract void validateData();
-    protected abstract void executePayment();
+    protected abstract boolean executePayment();
     protected abstract void sendReceipt();
 }
