@@ -1,7 +1,6 @@
 package presentation;
 
-import domain.order.Order;
-import domain.order.Product;
+import domain.order.*;
 
 import domain.payment.Payment;
 
@@ -21,6 +20,7 @@ public class StartSimulation {
 
 
         List<Product> productList = addProducts();
+
         show(productList);
         Order o = createOrder(productList);
         System.out.println("Pending order info:");
@@ -49,6 +49,11 @@ public class StartSimulation {
 
     private static List<Product> addProducts() {
         List<Product> prodList = new LinkedList<>();
+        DiscountProduct discountProduct = new PercentageDiscountProduct(10);
+
+        Product exampleProduct = new Product("Initial Product", 10.0, "Category A", discountProduct);
+        prodList.add(exampleProduct);
+
 
         /*TODO: Create 10 different products with different discount types and add them to prodList*/
 

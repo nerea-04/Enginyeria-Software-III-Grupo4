@@ -1,6 +1,6 @@
 package domain.order;
 
-public abstract class Product {
+public class Product {
 
     private String name;
     private double standardPrice;
@@ -21,19 +21,23 @@ public abstract class Product {
         this.discountProduct = discountProduct;
     }
 
+    public double getFinalPrice() {
+        return discountProduct.applyDiscount(standardPrice);
+    }
+
     public String getName() {return name;}
     public double getStandardPrice() {return standardPrice;}
     public String getCategory() {return category;}
     public DiscountProduct getDiscountProduct() {
         return discountProduct;
     }
-    public void setDiscountProduct(DiscountProduct discountProduct) {
+    public void setDiscountStrategy(DiscountProduct discountProduct) {
         this.discountProduct = discountProduct;
     }
 
     
     public void changeDiscount(DiscountProduct discountProduct){
-        setDiscountProduct(discountProduct);
+        setDiscountStrategy(discountProduct);
     }
 
     public long getDiscountedPrice(){

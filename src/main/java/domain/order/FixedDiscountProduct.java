@@ -1,10 +1,15 @@
 package domain.order;
 
-public class FixedDiscountProduct extends Product implements DiscountProduct {
+public class FixedDiscountProduct implements DiscountProduct {
 
-    private double discountValue;
+    private final double discountValue;
 
-    public FixedDiscountProduct(String name, double standardPrice, String category) {
-        super(name, standardPrice, category);
+    public FixedDiscountProduct(double discountValue) {
+        this.discountValue = discountValue;
+    }
+
+    @Override
+    public double applyDiscount(double standardPrice) {
+        return Math.max(0, standardPrice - discountValue);
     }
 }
